@@ -16,7 +16,7 @@
           <span>has_promotion: {{ phone.has_promotion ? 'yes' : 'no' }}</span><br>
           <span>has_usp: {{ phone.has_usp ? 'yes' : 'no' }}</span><br>
         </p>
-          <small class="text-muted">Last updated 3 mins ago</small>
+        <small class="text-muted">See details</small>
       </div>
     </div>
   </div>

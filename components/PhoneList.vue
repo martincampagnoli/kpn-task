@@ -3,18 +3,20 @@
     <div class="container">
       <div class="row">
         <div class="col-4">
-          <span>Has 5g?</span>
-          <select v-model="has_5g" class="form-control" @change="applyFilter()">
-            <option value="">
-              All
-            </option>
-            <option value="true">
-              Yes
-            </option>
-            <option value="false">
-              No
-            </option>
-          </select>
+          <div style="display:flex">
+            <span>Has 5g? </span>
+            <select v-model="has_5g" class="form-control" @change="applyFilter()">
+              <option value="">
+                All
+              </option>
+              <option value="true">
+                Yes
+              </option>
+              <option value="false">
+                No
+              </option>
+            </select>
+          </div>
         </div>
         <div class="col-4">
           <span>Filter by Name</span>
@@ -42,7 +44,7 @@
 
 <script>
 import axios from 'axios'
-import Phone from './Phone.vue'
+import Phone from './PhoneItem.vue'
 
 export default {
   components: { Phone },
@@ -82,7 +84,7 @@ export default {
 
     filterPhonesByColor (phones) {
       if (!this.color) { return phones }
-      return phones.filter(e => e.colors.includes(this.color))
+      return phones.filter(e => e.colors.includes(this.color.toUpperCase()))
     }
 
   }
