@@ -36,13 +36,16 @@
     </div>
 
     <div class="container">
-      <div class="row">
+      <div v-if="filteredPhones.length > 0" class="row">
         <div class="card-deck">
           <div v-for="item in filteredPhones" :key="item.id">
             <phone :phone="item" />
             <br>
           </div>
         </div>
+      </div>
+      <div v-if="filteredPhones.length === 0">
+        There are no phones to display, try to update or remove filters
       </div>
     </div>
   </div>
