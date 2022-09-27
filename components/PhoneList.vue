@@ -3,7 +3,7 @@
     <div class="container">
       <div class="row mb-4 mt-4">
         <div class="col-lg-3 col-sm-12 pl-0">
-          <span>Has 5g? </span>
+          <span>Has 5G? </span>
           <select v-model="has_5g" class="form-control" @change="applyFilter()">
             <option value="true">
               Yes

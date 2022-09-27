@@ -1,8 +1,8 @@
 /* eslint-disable vue/require-prop-types */
 <template>
   <div>
-    <div class="card" style="width:350px">
-      <img class="card-img-top" :src="`https://source.unsplash.com/random/300x100?sig=${phone.id}`" alt="Card image cap">
+    <div class="card">
+      <img class="card-img-top" :src="`/phones${randomValue}.jpeg`" alt="Card image cap">
       <div class="card-body">
         <h5 class="card-title">
           {{ phone.name }}
@@ -12,7 +12,7 @@
           <br>
         </p>
         <div>
-          Has 5g?:
+          Has 5G?:
           <span :class="{ 'text-success': phone.has_5g, 'text-danger': !phone.has_5g }">
             {{ phone.has_5g ? 'Yes' : 'No' }}
           </span>
@@ -45,9 +45,23 @@
 
 <script>
 export default {
-  props: ['phone']
+  props: ['phone'],
+  computed: {
+    randomValue () {
+      const randomValue = Math.floor(Math.random() * (3))
+      return randomValue
+    }
+  }
 }
+
 </script>
 
 <style>
+.card{
+  width:350px
+}
+.card-img-top {
+  width:348px;
+  height: 200px
+}
 </style>
