@@ -1,4 +1,10 @@
-# kpn
+# KPN task
+
+Assessment developed in around 6-8 hs using Vue and Nuxt framework.
+Phones listing from a provided JSON file.
+It can be filtered by properties (has_5g, name, color)
+Basic layout design using Bootstrap
+
 
 ## Build Setup
 
