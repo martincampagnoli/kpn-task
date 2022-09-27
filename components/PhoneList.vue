@@ -2,24 +2,22 @@
   <div>
     <div class="container">
       <div class="row">
-        <div class="col-4">
-          <div style="display:flex">
-            <span>Has 5g? </span>
-            <select v-model="has_5g" class="form-control" @change="applyFilter()">
-              <option value="true">
-                Yes
-              </option>
-              <option value="false">
-                No
-              </option>
-            </select>
-          </div>
+        <div class="col-4 pl-0 pr-4">
+          <span>Has 5g? </span>
+          <select v-model="has_5g" class="form-control" @change="applyFilter()">
+            <option value="true">
+              Yes
+            </option>
+            <option value="false">
+              No
+            </option>
+          </select>
         </div>
-        <div class="col-4">
+        <div class="col-4 pl-0 pr-4">
           <span>Filter by Name</span>
-          <input v-model="name" type="text" placeholder="Enter name here" @keyup="applyFilter()">
+          <input v-model="name" type="text" class="form-control" placeholder="<enter name here>" @keyup="applyFilter()">
         </div>
-        <div class="col-4">
+        <div class="col-4 pl-0 pr-4">
           <span>Filter by Color</span>
           <select v-model="color" class="form-control" @change="applyFilter()">
             <option v-for="c in colors" :key="c" :value="c">
@@ -29,7 +27,7 @@
         </div>
       </div>
       <div class="row">
-        <button @click="clearFilters()">
+        <button class="btn btn-primary" @click="clearFilters()">
           Clear Filters
         </button>
       </div>

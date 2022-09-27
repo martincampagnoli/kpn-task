@@ -11,10 +11,10 @@
           {{ phone.model }}
           <br>
           <br>
-          <span>has_5g: {{ phone.has_5g ? 'yes' : 'no' }}</span><br>
-          <span>has_esim: {{ phone.has_esim ? 'yes' : 'no' }}</span><br>
-          <span>has_promotion: {{ phone.has_promotion ? 'yes' : 'no' }}</span><br>
-          <span>has_usp: {{ phone.has_usp ? 'yes' : 'no' }}</span><br>
+          <span>Has 5g?: {{ phone.has_5g ? 'yes' : 'no' }}</span><br>
+          <span>Has eSim?: {{ phone.has_esim ? 'yes' : 'no' }}</span><br>
+          <span>Has promotion?: {{ phone.has_promotion ? 'yes' : 'no' }}</span><br>
+          <span>Has usp?: {{ phone.has_usp ? 'yes' : 'no' }}</span><br>
           Colors available: <span v-for="color in phone.colors" :key="color">
             {{ color }} <br>
           </span>
