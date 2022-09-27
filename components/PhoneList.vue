@@ -6,9 +6,6 @@
           <div style="display:flex">
             <span>Has 5g? </span>
             <select v-model="has_5g" class="form-control" @change="applyFilter()">
-              <option value="">
-                All
-              </option>
               <option value="true">
                 Yes
               </option>
@@ -24,8 +21,17 @@
         </div>
         <div class="col-4">
           <span>Filter by Color</span>
-          <input v-model="color" type="text" placeholder="Enter color here" @keyup="applyFilter()">
+          <select v-model="color" class="form-control" @change="applyFilter()">
+            <option v-for="c in colors" :key="c" :value="c">
+              {{ c }}
+            </option>
+          </select>
         </div>
+      </div>
+      <div class="row">
+        <button @click="clearFilters()">
+          Clear Filters
+        </button>
       </div>
     </div>
 
@@ -54,7 +60,26 @@ export default {
       filteredPhones: {},
       name: '',
       has_5g: '',
-      color: ''
+      color: '',
+      colors: [
+        'Blauw',
+        'Goud',
+        'Grafiet',
+        'Zilver',
+        'Zwart',
+        'Grijs',
+        'Wit',
+        'Rood',
+        'Geel',
+        'Groen',
+        'Paars',
+        'Mint',
+        'Creme',
+        'Violet',
+        'Dark Pearl',
+        'Magic Blue',
+        'Electric Graphite'
+      ]
     }
   },
   mounted () {
@@ -69,22 +94,25 @@ export default {
         })
     },
     applyFilter () {
-      console.dir(this.filteredPhones)
       this.filteredPhones = this.filterPhonesBy5g(this.filterPhonesByName(this.filterPhonesByColor(this.phones)))
     },
     filterPhonesBy5g (phones) {
       if (!this.has_5g) { return phones }
       return phones.filter(e => e.has_5g === JSON.parse(this.has_5g))
     },
-
     filterPhonesByName (phones) {
       if (!this.name) { return phones }
-      return phones.filter(e => e.name.toLowerCase().includes(this.name))
+      return phones.filter(e => e.name.toLowerCase().includes(this.name.toLowerCase()))
     },
-
     filterPhonesByColor (phones) {
       if (!this.color) { return phones }
       return phones.filter(e => e.colors.includes(this.color.toUpperCase()))
+    },
+    clearFilters () {
+      this.name = ''
+      this.has_5g = undefined
+      this.color = ''
+      this.applyFilter()
     }
 
   }

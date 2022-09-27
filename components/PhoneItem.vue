@@ -15,8 +15,11 @@
           <span>has_esim: {{ phone.has_esim ? 'yes' : 'no' }}</span><br>
           <span>has_promotion: {{ phone.has_promotion ? 'yes' : 'no' }}</span><br>
           <span>has_usp: {{ phone.has_usp ? 'yes' : 'no' }}</span><br>
+          Colors available: <span v-for="color in phone.colors" :key="color">
+            {{ color }} <br>
+          </span>
         </p>
-        <small class="text-muted">See details</small>
+        <small class="text-muted"> -> See details</small>
       </div>
     </div>
   </div>
@@ -24,13 +27,9 @@
 
 <script>
 export default {
-  props: ['phone'],
-  created () {
-    console.dir(this.phone)
-  }
+  props: ['phone']
 }
 </script>
 
 <style>
-
 </style>
