@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="container">
-      <div class="row mb-4">
+      <div class="row mb-4 mt-4">
         <div class="col-lg-3 col-sm-12 pl-0">
           <span>Has 5g? </span>
           <select v-model="has_5g" class="form-control" @change="applyFilter()">
