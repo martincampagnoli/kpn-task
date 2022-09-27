@@ -35,9 +35,13 @@
             {{ phone.usp ? 'Yes' : 'No' }}
           </span>
         </div>
-        Colors available: <span v-for="color in phone.colors" :key="color">
-          {{ color }},
-        </span>
+        <div>
+          Colors available:
+          <span v-for="(color, index) in phone.colors" :key="color">
+            <span v-if="index !== 0">, </span>
+            {{ color }}
+          </span>
+        </div>
       </div>
     </div>
   </div>
