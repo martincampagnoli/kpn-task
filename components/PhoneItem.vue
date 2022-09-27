@@ -14,25 +14,25 @@
         <div>
           Has 5g?:
           <span :class="{ 'text-success': phone.has_5g, 'text-danger': !phone.has_5g }">
-            {{ phone.has_5g ? 'yes' : 'no' }}
+            {{ phone.has_5g ? 'Yes' : 'No' }}
           </span>
         </div>
         <div>
           Has eSim?:
           <span :class="{ 'text-success': phone.has_esim, 'text-danger': !phone.has_esim }">
-            {{ phone.has_esim ? 'yes' : 'no' }}
+            {{ phone.has_esim ? 'Yes' : 'No' }}
           </span>
         </div>
         <div>
           Has promotion?:
           <span :class="{ 'text-success': phone.has_promotion, 'text-danger': !phone.has_promotion }">
-            {{ phone.has_promotion ? 'yes' : 'no' }}
+            {{ phone.has_promotion ? 'Yes' : 'No' }}
           </span>
         </div>
         <div>
           Has usp?:
           <span :class="{ 'text-success': phone.usp, 'text-danger': !phone.usp }">
-            {{ phone.usp ? 'yes' : 'no' }}
+            {{ phone.usp ? 'Yes' : 'No' }}
           </span>
         </div>
         Colors available: <span v-for="color in phone.colors" :key="color">
