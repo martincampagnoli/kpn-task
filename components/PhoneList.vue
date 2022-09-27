@@ -1,8 +1,8 @@
 <template>
   <div>
     <div class="container">
-      <div class="row">
-        <div class="col-4 pl-0 pr-4">
+      <div class="row mb-4">
+        <div class="col-lg-3 col-sm-12 pl-0">
           <span>Has 5g? </span>
           <select v-model="has_5g" class="form-control" @change="applyFilter()">
             <option value="true">
@@ -13,11 +13,11 @@
             </option>
           </select>
         </div>
-        <div class="col-4 pl-0 pr-4">
+        <div class="col-lg-3 col-sm-12 pl-0">
           <span>Filter by Name</span>
           <input v-model="name" type="text" class="form-control" placeholder="<enter name here>" @keyup="applyFilter()">
         </div>
-        <div class="col-4 pl-0 pr-4">
+        <div class="col-lg-3 col-sm-12 pl-0">
           <span>Filter by Color</span>
           <select v-model="color" class="form-control" @change="applyFilter()">
             <option v-for="c in colors" :key="c" :value="c">
@@ -25,11 +25,11 @@
             </option>
           </select>
         </div>
-      </div>
-      <div class="row">
-        <button class="btn btn-primary" @click="clearFilters()">
-          Clear Filters
-        </button>
+        <div class="col-lg-3 col-sm-12 pl-0 d-flex justify-content-center align-items-end">
+          <button class="btn btn-primary" @click="clearFilters()">
+            Clear Filters
+          </button>
+        </div>
       </div>
     </div>
 
@@ -115,12 +115,9 @@ export default {
       this.color = ''
       this.applyFilter()
     }
-
   }
-
 }
 </script>
 
 <style>
-
 </style>
